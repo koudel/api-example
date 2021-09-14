@@ -65,7 +65,7 @@ namespace Product.Service.Main
 
                     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
-                    var filePath = Path.Combine(AppContext.BaseDirectory, $"{PlatformServices.Default.Application.ApplicationName}.xml");
+                    var filePath = Path.Combine(AppContext.BaseDirectory, $"Product.Service.Main.xml");
                     c.IncludeXmlComments(filePath);
 
                     c.OperationFilter<RemoveVersionParameterFilter>();
