@@ -1,17 +1,20 @@
 ﻿using Product.Service.Application.DTO.Common;
 using Product.Service.Application.DTO.Product;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Product.Service.Application.UseCases.Query
 {
+    /// <summary>
+    /// MediatRs response for <see cref="GetProductQuery"/>
+    /// </summary>
     public class GetProductQueryResponse
     {
         /// <summary>
         /// The payload of the message
         /// </summary>
         public ProductDTO Payload { get; set; }
+        /// <summary>
+        /// Response of the message
+        /// </summary>
         public ResponseDTO Response { get; set; }
 
         /// <summary>

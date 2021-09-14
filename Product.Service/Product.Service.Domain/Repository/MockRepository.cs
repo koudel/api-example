@@ -1,25 +1,39 @@
 ﻿using Product.Service.Domain.Entity;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Linq;
 
 namespace Product.Service.Domain.Repository
 {
+    /// <summary>
+    /// <see cref="MockRepository"/>
+    /// </summary>
     public class MockRepository : IMockRepository
     {
+        /// <summary>
+        /// Repository list
+        /// </summary>
         private List<ProductEntity> _repo = new List<ProductEntity>();
 
+        /// <summary>
+        /// <see cref="MockRepository"/>
+        /// </summary>
         public MockRepository()
         {
             SetRepository();
         }
 
+        /// <summary>
+        /// Get mocked data in list
+        /// </summary>
+        /// <returns>List of products</returns>
         public IEnumerable<ProductEntity> GetRepository()
         {
             return _repo;
         }
 
+        /// <summary>
+        /// Create fresh data for every instance
+        /// </summary>
         public void SetRepository()
         {
             _repo.Add(new ProductEntity() { Id = new Guid("5225ec77-f735-4f47-80a8-4957298d64f4"), Name = "Shoes", ImgUri = new Uri("https://3-cz-cdn.bata.eu/gallery/1/e/f/6/7/5.jpg"), Price = 200.60M, Description = "Best shoes." });
@@ -29,6 +43,11 @@ namespace Product.Service.Domain.Repository
             _repo.Add(new ProductEntity() { Id = new Guid("fde06615-a930-4a9d-9680-32cd7ebcbda2"), Name = "Watches", ImgUri = new Uri("https://cdn.alza.cz/ImgW.ashx?fd=f4&cd=XI300i12e&i=1.jpg"), Price = 2000.81M, Description = "Best watches." });
         }
 
+        /// <summary>
+        /// Save new data in specific row
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>Count of edited rows</returns>
         public int SaveChanges(ProductEntity product)
         {
             int index =  _repo.FindIndex(a => a.Id == product.Id);

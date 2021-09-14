@@ -1,10 +1,8 @@
-﻿using System.Reflection;
-using Autofac;
+﻿using Autofac;
 using FluentValidation;
-using MediatR;
 using MediatR.Extensions.Autofac.DependencyInjection;
 using Product.Service.Application.UseCases.Command.Update;
-using Product.Service.Domain.Repository;
+using System.Reflection;
 
 namespace Product.Service.Main.AutofacModules
 {
@@ -21,6 +19,7 @@ namespace Product.Service.Main.AutofacModules
         {
             // Register all commands, responses and event handlers from the Application assembly
             // by getting the assembly name from one class implemented there.
+            // lower version of Mediatr needed for thos older .NET CORE version
             builder.AddMediatR(typeof(UpdateProductDescriptionCommand).Assembly);
 
             builder.RegisterAssemblyTypes(typeof(UpdateProductDescriptionCommand).GetTypeInfo().Assembly)

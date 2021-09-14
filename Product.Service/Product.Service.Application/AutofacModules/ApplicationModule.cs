@@ -1,12 +1,11 @@
 ﻿using Autofac;
-using Microsoft.Extensions.Logging;
 using Product.Service.Application.UseCases.Command.Update;
 using Product.Service.Domain.Repository;
 
 namespace Product.Service.Application.AutofacModules
 {
     /// <summary>
-    /// Dependency injection setup of the application
+    /// Dependency injection setup of the application layer
     /// </summary>
     public class ApplicationModule : Module
     {
@@ -16,9 +15,6 @@ namespace Product.Service.Application.AutofacModules
         /// <param name="builder"></param>
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new ApplicationStartup(
-                c.Resolve<ILogger<ApplicationStartup>>())).As<IApplicationStartup>().SingleInstance();
-
             builder.Register(c => new UpdateProductDescriptionCommandHandler(
                 c.Resolve<IMockRepository>())).As<UpdateProductDescriptionCommandHandler>().SingleInstance();
         }

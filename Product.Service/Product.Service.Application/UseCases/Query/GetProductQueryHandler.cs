@@ -6,12 +6,14 @@ using Product.Service.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Product.Service.Application.UseCases.Query
 {
+    /// <summary>
+    /// MediatRs handler for <see cref="GetProductQuery"/>
+    /// </summary>
     public class GetProductQueryHandler : IRequestHandler<GetProductQuery, GetProductQueryResponse>
     {
         private readonly IMockRepository _repository;
@@ -19,14 +21,14 @@ namespace Product.Service.Application.UseCases.Query
         /// <summary>
         /// Initializes a new instance of the <see cref="GetProductQueryHandler"/> class.
         /// </summary>
-        /// <param name="IMockRepository">MockRepository</param>
+        /// <param name="IMockRepository"><see cref="IMockRepository"/></param>
         public GetProductQueryHandler(IMockRepository repository)
         {
             _repository = repository;
         }
 
         /// <summary>
-        /// Integration event handler for GetProductQuery
+        /// Integration event handler for <see cref="GetProductQuery"/>
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -34,7 +36,7 @@ namespace Product.Service.Application.UseCases.Query
         {
             try
             {
-                var product = _repository.GetRepository().Where(w => w.Id == request.Payload.Id).FirstOrDefault();
+                var product =  _repository.GetRepository().Where(w => w.Id == request.Payload.Id).FirstOrDefault();
 
                 if (EqualityComparer<ProductEntity>.Default.Equals(product, default(ProductEntity)))
                 {

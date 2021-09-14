@@ -1,12 +1,12 @@
-﻿using System.Linq;
-using Autofac;
+﻿using Autofac;
+using System.Linq;
 
 namespace Product.Service.Main.AutofacModules
 {
     /// <summary>
     /// Loads the DI container with RestAPI classes
     /// </summary>
-    public class RestApiModule : Module
+    public class RestApiModule : Autofac.Module
     {
         /// <summary>
         /// Load all Rest Api Classes

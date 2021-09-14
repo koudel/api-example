@@ -4,22 +4,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
 using Product.Service.Application.AutofacModules;
+using Product.Service.Domain.Repository;
 using Product.Service.Main.AutofacModules;
-using Product.Service.Main.V1.Controllers;
-using Product.Service.Main.V1.Apis;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
 using static Product.Service.Main.Helpers.CommonHelper;
-using Product.Service.Domain.Repository;
 
 namespace Product.Service.Main
 {
@@ -87,18 +80,7 @@ namespace Product.Service.Main
             container.Populate(services);
             container.RegisterModule(new ApplicationModule());
             container.RegisterModule(new MediatRModule());
-            container.RegisterModule(new RestApiModule());
-            //container.RegisterType<ProductController>().As<IProductController>();
-            //container.RegisterType<Mediator>().As<IMediator>();
-            /*container.Register<ServiceFactory>(ctx =>
-            {
-                var c = ctx.Resolve<IComponentContext>();
-                return t => c.Resolve(t);
-            });*/
-            /*container.Register(c => new ProductController(
-                    c.Resolve<IMediator>())).As<IProductController>().InstancePerDependency();*/
-
-            
+            container.RegisterModule(new RestApiModule());            
 
             return new AutofacServiceProvider(container.Build());
         }

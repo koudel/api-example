@@ -2,23 +2,24 @@
 using Product.Service.Application.DTO.Common;
 using Product.Service.Application.DTO.Product;
 using Product.Service.Application.DTO.Product.Extensions;
-using Product.Service.Domain.Entity;
 using Product.Service.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Product.Service.Application.UseCases.Query
 {
+    /// <summary>
+    /// MediatRs handler for <see cref="GetAllProductQuery"/>
+    /// </summary>
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery, GetAllProductQueryResponse>
     {
         private readonly IMockRepository _repository;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetProductQueryHandler"/> class.
+        /// Initializes a new instance of the <see cref="GetAllProductQueryHandler"/> class.
         /// </summary>
         /// <param name="IMockRepository">MockRepository</param>
         public GetAllProductQueryHandler(IMockRepository repository)
@@ -27,7 +28,7 @@ namespace Product.Service.Application.UseCases.Query
         }
 
         /// <summary>
-        /// Integration event handler for GetProductQuery
+        /// Integration event handler for <see cref="GetAllProductQuery"/>
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>

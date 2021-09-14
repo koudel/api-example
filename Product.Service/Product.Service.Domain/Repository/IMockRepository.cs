@@ -1,10 +1,11 @@
 ﻿using Product.Service.Domain.Entity;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Product.Service.Domain.Repository
 {
+    /// <summary>
+    /// <see cref="IMockRepository"/>
+    /// </summary>
     public interface IMockRepository
     {
         IEnumerable<ProductEntity> GetRepository();

@@ -1,18 +1,17 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Product.Service.Main.V1.Controllers;
+using Product.Service.Main.V1.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Threading.Tasks;
-using Product.Service.Main.V1.Models;
-using Product.Service.Main.V1.Controllers;
 
 namespace Product.Service.Main.V1.Apis
 {
     /// <summary>
-    /// Instance of Product Api
+    /// Instance of <see cref="Product"/>
     /// </summary>
     [ApiController]
     [ApiExplorerSettings(GroupName = "v1")]
@@ -25,7 +24,7 @@ namespace Product.Service.Main.V1.Apis
         private readonly int timeout = 2000;
 
         /// <summary>
-        /// Constructor for Product Api
+        /// Constructor for <see cref="Product"/>
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="controller"></param>
@@ -87,6 +86,7 @@ namespace Product.Service.Main.V1.Apis
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Produces("application/json")]
         public async Task<IActionResult> UpdateDescription([Required] Guid id, [FromBody][Required] string description)
         {
             var resp = _controller.UpdateProductDescription(this, id, description);

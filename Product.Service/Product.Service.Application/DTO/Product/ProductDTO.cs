@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Product.Service.Application.DTO.Product
 {
@@ -31,6 +29,9 @@ namespace Product.Service.Application.DTO.Product
         public string Description { get; set; }
     }
 
+    /// <summary>
+    /// DTO for request UpdateProductDescriptionCommand
+    /// </summary>
     public class UpdateProductDescriptionDTO
     {
         /// <summary>
@@ -43,6 +44,9 @@ namespace Product.Service.Application.DTO.Product
         public string Description { get; set; }
     }
 
+    /// <summary>
+    /// DTO for request GetProductQuery
+    /// </summary>
     public class GetProductDTO
     {
         /// <summary>

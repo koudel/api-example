@@ -1,12 +1,17 @@
 ﻿using Product.Service.Domain.Entity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Product.Service.Application.DTO.Product.Extensions
 {
+    /// <summary>
+    /// <see cref="ProductExtensions"/>
+    /// </summary>
     public static class ProductExtensions
     {
+        /// <summary>
+        /// Enables map <see cref="ProductEntity"/> into <see cref="ProductDTO"/>
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public static ProductDTO MapToProductDTO(this ProductEntity entity)
         {
             return new ProductDTO()

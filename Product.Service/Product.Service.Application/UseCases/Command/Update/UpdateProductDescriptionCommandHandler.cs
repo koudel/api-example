@@ -1,19 +1,18 @@
-﻿using System;
+﻿using MediatR;
+using Product.Service.Application.DTO.Common;
+using Product.Service.Application.DTO.Product.Extensions;
+using Product.Service.Domain.Entity;
+using Product.Service.Domain.Repository;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatR;
-using Product.Service.Application.DTO.Common;
-using Product.Service.Application.DTO.Product;
-using Product.Service.Domain.Repository;
-using System.Linq;
-using Product.Service.Domain.Entity;
-using System.Collections.Generic;
-using Product.Service.Application.DTO.Product.Extensions;
 
 namespace Product.Service.Application.UseCases.Command.Update
 {
     /// <summary>
-    /// Handles the update of description on product
+    /// MediatRs handler for <see cref="UpdateProductDescriptionCommand"/>
     /// </summary>
     public class UpdateProductDescriptionCommandHandler : IRequestHandler<UpdateProductDescriptionCommand, UpdateProductDescriptionCommandResponse>
     {
@@ -29,7 +28,7 @@ namespace Product.Service.Application.UseCases.Command.Update
         }
 
         /// <summary>
-        /// Integration event handler for ProductUpdateDescriptionCommand
+        /// Integration event handler for <see cref="UpdateProductDescriptionCommand"/>
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>

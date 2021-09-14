@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Product.Service.Domain.Entity
 {
+    /// <summary>
+    /// Repository entity <see cref="ProductEntity"/>
+    /// </summary>
     public class ProductEntity
     {
         /// <summary>

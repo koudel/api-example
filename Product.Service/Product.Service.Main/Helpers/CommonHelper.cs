@@ -1,19 +1,16 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Product.Service.Main.Helpers
 {
     /// <summary>
-    /// Static class for common helpers
+    /// Static class <see cref="CommonHelper"/>
     /// </summary>
     public static class CommonHelper
     {
         /// <summary>
-        /// Extension for IOperationFilter class
+        /// Extension for <see cref="IOperationFilter"/>
         /// </summary>
         public class RemoveVersionParameterFilter : IOperationFilter
         {
@@ -30,7 +27,7 @@ namespace Product.Service.Main.Helpers
         }
 
         /// <summary>
-        /// Extension for IDocumentFilter class
+        /// Extension for <see cref="IDocumentFilter"/>
         /// </summary>
         public class ReplaceVersionWithExactValueInPathFilter : IDocumentFilter
         {

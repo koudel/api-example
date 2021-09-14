@@ -1,22 +1,18 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Product.Service.Main.V1.Models;
+﻿using AutoMapper;
 using MediatR;
-using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Product.Service.Application.DTO.Product;
 using Product.Service.Application.UseCases.Command.Update;
 using Product.Service.Application.UseCases.Query;
+using Product.Service.Main.V1.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Product.Service.Main.V1.Controllers
 {
     /// <summary>
-    /// Instance of Product Controller
+    /// Instance of <see cref="ProductController"/>
     /// </summary>
     public class ProductController : IProductController
     {
@@ -24,7 +20,7 @@ namespace Product.Service.Main.V1.Controllers
         private readonly IMapper _mapper;
 
         /// <summary>
-        /// ProductController
+        /// <see cref="ProductController"/>
         /// </summary>
         /// <param name="mediator"></param>
         public ProductController(IMediator mediator)
@@ -42,7 +38,7 @@ namespace Product.Service.Main.V1.Controllers
 
 
         /// <summary>
-        /// 
+        /// Get all stored products
         /// </summary>
         /// <param name="Base"></param>
         /// <returns></returns>
@@ -59,18 +55,16 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
-                Base.Response.StatusCode = StatusCodes.Status404NotFound;
                 return Base.NotFound();
             }
             else
             {
-                Base.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 return Base.StatusCode(500);
             }
         }
 
         /// <summary>
-        /// Get specific product
+        /// Get specific stored product
         /// </summary>
         /// <param name="Base"></param>
         /// <param name="id"></param>
@@ -89,16 +83,21 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
-                Base.Response.StatusCode = StatusCodes.Status404NotFound;
                 return Base.NotFound();
             }
             else
             {
-                Base.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 return Base.StatusCode(500);
             }
         }
 
+        /// <summary>
+        /// Update description on product based on ID
+        /// </summary>
+        /// <param name="Base"></param>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <returns></returns>
         public async Task<IActionResult> UpdateProductDescription(ControllerBase Base, Guid id, string description)
         {
             var dto = new UpdateProductDescriptionDTO() { Id = id, Description = description };
@@ -113,12 +112,10 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
-                Base.Response.StatusCode = StatusCodes.Status404NotFound;
                 return Base.NotFound();
             }
             else
             {
-                Base.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 return Base.StatusCode(500);
             }
         }

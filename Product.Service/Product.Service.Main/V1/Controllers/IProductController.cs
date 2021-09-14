@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Threading.Tasks;
-using Product.Service.Main.V1.Models;
 
 namespace Product.Service.Main.V1.Controllers
 {
     /// <summary>
-    /// Instance of Product Interface
+    /// Instance of <see cref="IProductController"/>
     /// </summary>
     public interface IProductController
     {

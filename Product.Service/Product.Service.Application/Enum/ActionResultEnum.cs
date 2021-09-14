@@ -1,4 +1,7 @@
-﻿public enum ActionResult
+﻿/// <summary>
+/// Operation enum
+/// </summary>
+public enum ActionResult
 {
     /// <summary>
     /// The operation was successful

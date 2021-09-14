@@ -1,12 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Autofac.Extensions.DependencyInjection;
+﻿using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Win32;
+using System.Threading.Tasks;
 
 namespace Product.Service.Main
 {

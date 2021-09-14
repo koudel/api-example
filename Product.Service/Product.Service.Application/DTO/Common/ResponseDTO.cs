@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Product.Service.Application.DTO.Common
+﻿namespace Product.Service.Application.DTO.Common
 {
     public class ResponseDTO
     {
