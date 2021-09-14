@@ -90,7 +90,7 @@ namespace Product.Service.Main
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMockRepository repo)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -102,8 +102,6 @@ namespace Product.Service.Main
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            repo.SetRepository();
 
             app.UseMvc();
         }
