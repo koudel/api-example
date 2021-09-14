@@ -19,7 +19,7 @@ namespace Product.Service.Main.AutofacModules
         {
             // Register all commands, responses and event handlers from the Application assembly
             // by getting the assembly name from one class implemented there.
-            // lower version of Mediatr needed for thos older .NET CORE version
+            // lower version of Mediatr needed for this older .NET CORE version
             builder.AddMediatR(typeof(UpdateProductDescriptionCommand).Assembly);
 
             builder.RegisterAssemblyTypes(typeof(UpdateProductDescriptionCommand).GetTypeInfo().Assembly)
