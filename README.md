@@ -5,8 +5,8 @@ Changes in PUT endpoint are not stored. Data are reloaded for every call.<br>
 API has 5 hardcoded rows of **Product** object class.
 
 ## Endpoints
-[GET] /v1/Product/GetAll
-[GET] /v1/Product/Get/{id}
+[GET] /v1/Product/GetAll <br>
+[GET] /v1/Product/Get/{id} <br>
 [PUT] ​/v1​/Product​/UpdateDescription
 
 ## Prerequisites
