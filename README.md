@@ -18,17 +18,17 @@ Edit can be done in every text editor (Visual studio recommended). For build is 
 
 ### Execute
 **With Visual Studio**:<br>
-Open solution **Product.Service.sln** (placed in folder *\Product.Service\*). Service can be run in debug mode directly from visual studio without any changes. <br>
+Open solution **Product.Service.sln** (placed in folder *\Product.Service\\*). Service can be run in debug mode directly from visual studio without any changes. <br>
 Service will run at *http://localhost:29144/* and Visual Studio will automatically start window at **Swagger documentation** (http://localhost:29144/swagger/index.html) <br><br>
 
 **With command line**:<br>
-Navigate into folder with **Product.Service.Main.csproj** (placed in folder *\Product.Service\Product.Service.Main\*). <br>
+Navigate into folder with **Product.Service.Main.csproj** (placed in folder *\Product.Service\Product.Service.Main\\*). <br>
 Run command **dotnet run**. API is placed in address *http://localhost:5000* (for swagger documentation add */swagger* into address) <br>
 
 ## Tests
 **With Visual Studio**:<br>
-Open solution **Product.Service.sln** (placed in folder *\Product.Service\*). Open folder **Tests** in Solution Explorer. Right click on project **Product.Service.UnitTests** and click *Run Tests*<br><br>
+Open solution **Product.Service.sln** (placed in folder *\Product.Service\\*). Open folder **Tests** in Solution Explorer. Right click on project **Product.Service.UnitTests** and click *Run Tests*<br><br>
 
 **With command line**:<br>
-Navigate into folder with **Product.Service.UnitTests.csproj** (placed in folder *\Product.Service\Product.Service.UnitTests\*). <br>
+Navigate into folder with **Product.Service.UnitTests.csproj** (placed in folder *\Product.Service\Product.Service.UnitTests\\*). <br>
 Run command **dotnet test**. Results will be printed into console.
