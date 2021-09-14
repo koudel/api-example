@@ -4,6 +4,11 @@ API example with part of **CQRS model**. Application is not using any DB, data a
 Changes in PUT endpoint are not stored. Data are reloaded for every call.<br>
 API has 5 hardcoded rows of **Product** object class.
 
+## Endpoints
+[GET] /v1/Product/GetAll
+[GET] /v1/Product/Get/{id}
+[PUT] ​/v1​/Product​/UpdateDescription
+
 ## Prerequisites
 
 Recomended: Visual Studio 2019 (or Community) or dotnet in command line
