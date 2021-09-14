@@ -26,7 +26,8 @@ namespace Product.Service.UnitTests
             _server = new TestServer(new WebHostBuilder()
                 .UseEnvironment("Test")
                 .UseStartup<Startup>());
-                _client = _server.CreateClient();
+
+            _client = _server.CreateClient();
         }
 
         [TestMethod]
