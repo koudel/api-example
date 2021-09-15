@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Product.Service.Application.DTO.Product;
 using Product.Service.Application.UseCases.Command.Update;
 using Product.Service.Application.UseCases.Query;
@@ -18,14 +19,17 @@ namespace Product.Service.Main.V1.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private ILogger<ProductController> _logger;
 
         /// <summary>
         /// <see cref="ProductController"/>
         /// </summary>
         /// <param name="mediator"></param>
-        public ProductController(IMediator mediator)
+        /// <param name="logger"></param>
+        public ProductController(IMediator mediator, ILogger<ProductController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
 
             var mc = new MapperConfiguration(cfg =>
             {
@@ -55,10 +59,12 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
+                _logger.LogError(response.Response.Message);
                 return Base.NotFound();
             }
             else
             {
+                _logger.LogCritical(response.Response.Message);
                 return Base.StatusCode(500);
             }
         }
@@ -83,10 +89,12 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
+                _logger.LogError(response.Response.Message);
                 return Base.NotFound();
             }
             else
             {
+                _logger.LogCritical(response.Response.Message);
                 return Base.StatusCode(500);
             }
         }
@@ -112,10 +120,12 @@ namespace Product.Service.Main.V1.Controllers
             }
             else if (response.Response.Result == ActionResult.FAILED)
             {
+                _logger.LogError(response.Response.Message);
                 return Base.NotFound();
             }
             else
             {
+                _logger.LogCritical(response.Response.Message);
                 return Base.StatusCode(500);
             }
         }
