@@ -83,7 +83,7 @@ namespace Product.Service.Main.V1.Apis
         /// <returns>Returns edited row from stored product.</returns>
         /// <response code="200">Requested product was updated. Returns edited row from stored product.</response>
         /// <response code="404">Requested product not found.</response>
-        [HttpPut]
+        [HttpPatch]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Produces("application/json")]
